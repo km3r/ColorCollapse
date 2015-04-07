@@ -8,6 +8,6 @@
 
 public interface Output
 {
-   public void pushUpdate(int[][] board, int numberRemaining, int turns);
-   public void pushError(String error);
+   void pushUpdate(int[][] board, int numberRemaining, int turns);
+   void pushError(String error);
 }

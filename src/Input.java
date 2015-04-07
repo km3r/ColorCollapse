@@ -6,7 +6,8 @@
  * @version 4/6/2015
  */
 
-public interface Input{
-   public String getNextAction();
-   public boolean hasNextAction();
+public interface Input
+{
+   String getNextAction();
+   boolean hasNextAction();
 }

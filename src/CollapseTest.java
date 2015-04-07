@@ -1,6 +1,6 @@
 /**
  * Testing the collapse game
- * using system.out and system.in
+ * using system.out and system.in.
  *
  * @author Kyle Rosenthal
  * @version 4/6/2015
@@ -12,6 +12,6 @@ public class CollapseTest
     {
         Output output = new TextOutput(System.out);
         Input input = new TextInput(System.in);
-        CollapseBoard collapseBoard = new CollapseBoard(input,output,8,3);
+        CollapseBoard collapseBoard = new CollapseBoard(input, output, 8, 3);
     }
 }

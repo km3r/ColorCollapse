@@ -9,9 +9,9 @@ import java.io.PrintStream;
 
 public class TextOutput implements Output
 {
-    PrintStream out;
-    int[][] board;
-    int numberRemaining;
+    private PrintStream out;
+    private int[][] board;
+    private int numberRemaining;
 
     /**
      * Create a text output stream.
@@ -25,17 +25,18 @@ public class TextOutput implements Output
 
     /**
      * Update the output with a new set of data.
-     * @param board the board data
-     * @param numberRemaining how many tiles remain
+     * @param aBoard the board data
+     * @param numRemaining how many tiles remain
      * @param turns moves the player has made
      */
     @Override
-    public void pushUpdate(int[][] board, int numberRemaining, int turns)
+    public void pushUpdate(int[][] aBoard, int numRemaining, int turns)
     {
-        this.board = board;
-        this.numberRemaining = numberRemaining;
-        if (numberRemaining != 0){
-            print("Number Remaining: "+ numberRemaining + "\t Moves: " + turns);
+        this.board = aBoard;
+        this.numberRemaining = numRemaining;
+        if (numberRemaining != 0)
+        {
+            print("Number Remaining: " + numberRemaining + "\tMoves: " + turns);
         }
         else
         {
@@ -53,25 +54,32 @@ public class TextOutput implements Output
         print(error);
     }
 
-    private void print(String message){
+    /**
+     * Print out the board with a message at the bottom.
+     * @param message string of the message
+     */
+    private void print(String message)
+    {
         out.print("   ");
         for (int col = 0; col < board[0].length; col++)
         {
             if (col < 9)
             {
-                out.print((col+1)+"  ");
-            } else
+                out.print((col + 1) + "  ");
+            }
+            else
             {
-                out.print((col+1)+" ");
+                out.print((col + 1) + " ");
             }
         }
         out.print("\n");
         for (int row = 0; row < board.length; row++)
         {
-            out.print(((char) (row+'A'))+": ");
+            out.print(((char) (row + 'A')) + ": ");
             for (int col = 0; col < board[0].length; col++)
             {
-                switch (board[row][col]){
+                switch (board[row][col])
+                {
                     case 0:
                         out.print("   ");
                         break;
@@ -94,7 +102,7 @@ public class TextOutput implements Output
         out.print(" -");
         for (int col = 0; col < board[0].length; col++)
         {
-            out.print("--");
+            out.print("---");
         }
         out.print("\n");
         out.print(message);
