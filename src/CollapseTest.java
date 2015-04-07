@@ -8,6 +8,10 @@
 
 public class CollapseTest
 {
+    /**
+     * Test class
+     * @param args not used
+     */
     public static void main(String[] args)
     {
         Output output = new TextOutput(System.out);
